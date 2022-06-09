@@ -2,7 +2,10 @@ package abi
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"github.com/containers/image/v5/types"
+	"io"
 	"io/ioutil"
 	"net/url"
 	"os"
@@ -224,6 +227,79 @@ func (ir *ImageEngine) Unmount(ctx context.Context, nameOrIDs []string, options 
 	}
 	return unmountReports, nil
 }
+
+type pullResult struct {
+	images []*libimage.Image
+	err    error
+}
+
+func (ir *ImageEngine) PullImage(ctx context.Context, rawImage string, pullOptions *libimage.PullOptions) (io.ReadCloser, error) {
+	progress := make(chan types.ProgressProperties)
+	pullOptions.Progress = progress
+
+	pullResChan := make(chan pullResult)
+	go func() {
+		pulledImages, err := ir.Libpod.LibimageRuntime().Pull(ctx, rawImage, config.PullPolicyAlways, pullOptions)
+		pullResChan <- pullResult{images: pulledImages, err: err}
+	}()
+
+	reader, writer := io.Pipe()
+	enc := json.NewEncoder(writer)
+
+	go func() {
+		for {
+			var report struct {
+				Stream   string `json:"stream,omitempty"`
+				Status   string `json:"status,omitempty"`
+				Progress struct {
+					Current uint64 `json:"current,omitempty"`
+					Total   int64  `json:"total,omitempty"`
+				} `json:"progressDetail,omitempty"`
+				Error string `json:"error,omitempty"`
+				Id    string `json:"id,omitempty"` // nolint
+			}
+			select {
+			case e := <-progress:
+				switch e.Event {
+				case types.ProgressEventNewArtifact:
+					report.Status = "Pulling fs layer"
+				case types.ProgressEventRead:
+					report.Status = "Downloading"
+					report.Progress.Current = e.Offset
+					report.Progress.Total = e.Artifact.Size
+				case types.ProgressEventSkipped:
+					report.Status = "Already exists"
+				case types.ProgressEventDone:
+					report.Status = "Download complete"
+				}
+				report.Id = e.Artifact.Digest.Encoded()[0:12]
+				if err := enc.Encode(report); err != nil {
+					logrus.Warnf("Failed to json encode error %q", err.Error())
+				}
+			case pullRes := <-pullResChan:
+				err := pullRes.err
+				pulledImages := pullRes.images
+				if err != nil {
+					report.Error = err.Error()
+				} else {
+					if len(pulledImages) > 0 {
+						img := pulledImages[0].ID()
+						report.Status = "Pull complete"
+						report.Id = img[0:12]
+					} else {
+						report.Error = "internal error: no images pulled"
+					}
+				}
+				if err := enc.Encode(report); err != nil {
+					logrus.Warnf("Failed to json encode error %q", err.Error())
+				}
+				return
+			}
+		}
+	}()
+	return reader, nil
+}
+
 
 func (ir *ImageEngine) Pull(ctx context.Context, rawImage string, options entities.ImagePullOptions) (*entities.ImagePullReport, error) {
 	pullOptions := &libimage.PullOptions{AllTags: options.AllTags}
