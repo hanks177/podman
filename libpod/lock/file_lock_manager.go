@@ -1,7 +1,7 @@
 package lock
 
 import (
-	"github.com/containers/podman/v4/libpod/lock/file"
+	"github.com/hanks177/podman/v4/libpod/lock/file"
 )
 
 // FileLockManager manages shared memory locks.

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/containers/podman/v4/libpod"
-	"github.com/containers/podman/v4/libpod/define"
+	"github.com/hanks177/podman/v4/libpod"
+	"github.com/hanks177/podman/v4/libpod/define"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/term"

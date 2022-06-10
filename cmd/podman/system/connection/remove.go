@@ -2,9 +2,9 @@ package connection
 
 import (
 	"github.com/containers/common/pkg/config"
-	"github.com/containers/podman/v4/cmd/podman/common"
-	"github.com/containers/podman/v4/cmd/podman/registry"
-	"github.com/containers/podman/v4/cmd/podman/system"
+	"github.com/hanks177/podman/v4/cmd/podman/common"
+	"github.com/hanks177/podman/v4/cmd/podman/registry"
+	"github.com/hanks177/podman/v4/cmd/podman/system"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )

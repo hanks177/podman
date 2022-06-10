@@ -7,8 +7,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/containers/podman/v4/pkg/domain/entities"
-	"github.com/containers/podman/v4/pkg/trust"
+	"github.com/hanks177/podman/v4/pkg/domain/entities"
+	"github.com/hanks177/podman/v4/pkg/trust"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

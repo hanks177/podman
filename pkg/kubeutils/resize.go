@@ -17,7 +17,7 @@ limitations under the License.
 package kubeutils
 
 import (
-	"github.com/containers/podman/v4/libpod/define"
+	"github.com/hanks177/podman/v4/libpod/define"
 )
 
 // HandleResizing spawns a goroutine that processes the resize channel, calling resizeFunc for each

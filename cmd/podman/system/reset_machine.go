@@ -4,7 +4,7 @@
 package system
 
 import (
-	cmdMach "github.com/containers/podman/v4/cmd/podman/machine"
+	cmdMach "github.com/hanks177/podman/v4/cmd/podman/machine"
 )
 
 func resetMachine() error {

@@ -4,11 +4,11 @@ package swagger
 import (
 	"github.com/containers/common/libnetwork/types"
 	"github.com/containers/image/v5/manifest"
-	"github.com/containers/podman/v4/libpod/define"
-	"github.com/containers/podman/v4/pkg/api/handlers"
-	"github.com/containers/podman/v4/pkg/domain/entities"
-	"github.com/containers/podman/v4/pkg/domain/entities/reports"
-	"github.com/containers/podman/v4/pkg/inspect"
+	"github.com/hanks177/podman/v4/libpod/define"
+	"github.com/hanks177/podman/v4/pkg/api/handlers"
+	"github.com/hanks177/podman/v4/pkg/domain/entities"
+	"github.com/hanks177/podman/v4/pkg/domain/entities/reports"
+	"github.com/hanks177/podman/v4/pkg/inspect"
 	dockerAPI "github.com/docker/docker/api/types"
 	dockerVolume "github.com/docker/docker/api/types/volume"
 )

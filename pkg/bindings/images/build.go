@@ -20,9 +20,9 @@ import (
 
 	"github.com/containers/buildah/define"
 	"github.com/containers/image/v5/types"
-	"github.com/containers/podman/v4/pkg/auth"
-	"github.com/containers/podman/v4/pkg/bindings"
-	"github.com/containers/podman/v4/pkg/domain/entities"
+	"github.com/hanks177/podman/v4/pkg/auth"
+	"github.com/hanks177/podman/v4/pkg/bindings"
+	"github.com/hanks177/podman/v4/pkg/domain/entities"
 	"github.com/containers/storage/pkg/fileutils"
 	"github.com/containers/storage/pkg/ioutils"
 	"github.com/docker/go-units"

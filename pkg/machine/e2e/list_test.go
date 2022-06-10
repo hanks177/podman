@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/containers/common/pkg/util"
-	"github.com/containers/podman/v4/cmd/podman/machine"
+	"github.com/hanks177/podman/v4/cmd/podman/machine"
 	jsoniter "github.com/json-iterator/go"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

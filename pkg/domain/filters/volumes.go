@@ -4,8 +4,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/containers/podman/v4/libpod"
-	"github.com/containers/podman/v4/pkg/util"
+	"github.com/hanks177/podman/v4/libpod"
+	"github.com/hanks177/podman/v4/pkg/util"
 	"github.com/pkg/errors"
 )
 

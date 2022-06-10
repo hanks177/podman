@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/containers/common/pkg/parse"
-	"github.com/containers/podman/v4/libpod"
-	v1 "github.com/containers/podman/v4/pkg/k8s.io/api/core/v1"
+	"github.com/hanks177/podman/v4/libpod"
+	v1 "github.com/hanks177/podman/v4/pkg/k8s.io/api/core/v1"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

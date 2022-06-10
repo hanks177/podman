@@ -7,9 +7,9 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/containers/podman/v4/pkg/errorhandling"
-	"github.com/containers/podman/v4/pkg/rootless"
-	"github.com/containers/podman/v4/pkg/systemd"
+	"github.com/hanks177/podman/v4/pkg/errorhandling"
+	"github.com/hanks177/podman/v4/pkg/rootless"
+	"github.com/hanks177/podman/v4/pkg/systemd"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

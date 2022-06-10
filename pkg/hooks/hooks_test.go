@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"testing"
 
-	current "github.com/containers/podman/v4/pkg/hooks/1.0.0"
+	current "github.com/hanks177/podman/v4/pkg/hooks/1.0.0"
 	rspec "github.com/opencontainers/runtime-spec/specs-go"
 	"github.com/stretchr/testify/assert"
 )

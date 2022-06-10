@@ -5,9 +5,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/containers/podman/v4/cmd/podman/registry"
-	"github.com/containers/podman/v4/cmd/podman/validate"
-	"github.com/containers/podman/v4/pkg/bindings"
+	"github.com/hanks177/podman/v4/cmd/podman/registry"
+	"github.com/hanks177/podman/v4/cmd/podman/validate"
+	"github.com/hanks177/podman/v4/pkg/bindings"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

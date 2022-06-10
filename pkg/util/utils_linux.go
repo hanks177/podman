@@ -9,8 +9,8 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/containers/podman/v4/libpod/define"
-	"github.com/containers/podman/v4/pkg/rootless"
+	"github.com/hanks177/podman/v4/libpod/define"
+	"github.com/hanks177/podman/v4/pkg/rootless"
 	"github.com/containers/psgo"
 	spec "github.com/opencontainers/runtime-spec/specs-go"
 	"github.com/opencontainers/runtime-tools/generate"

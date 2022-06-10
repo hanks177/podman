@@ -6,7 +6,7 @@ package lock
 import (
 	"syscall"
 
-	"github.com/containers/podman/v4/libpod/lock/shm"
+	"github.com/hanks177/podman/v4/libpod/lock/shm"
 	"github.com/pkg/errors"
 )
 

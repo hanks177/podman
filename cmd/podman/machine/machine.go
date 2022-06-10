@@ -13,11 +13,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/containers/podman/v4/cmd/podman/registry"
-	"github.com/containers/podman/v4/cmd/podman/validate"
-	"github.com/containers/podman/v4/libpod/events"
-	"github.com/containers/podman/v4/pkg/machine"
-	"github.com/containers/podman/v4/pkg/util"
+	"github.com/hanks177/podman/v4/cmd/podman/registry"
+	"github.com/hanks177/podman/v4/cmd/podman/validate"
+	"github.com/hanks177/podman/v4/libpod/events"
+	"github.com/hanks177/podman/v4/pkg/machine"
+	"github.com/hanks177/podman/v4/pkg/util"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

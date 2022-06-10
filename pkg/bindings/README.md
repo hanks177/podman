@@ -43,7 +43,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/containers/podman/v4/pkg/bindings"
+	"github.com/hanks177/podman/v4/pkg/bindings"
 )
 
 func main() {
@@ -74,8 +74,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/containers/podman/v4/pkg/bindings"
-	"github.com/containers/podman/v4/pkg/bindings/containers"
+	"github.com/hanks177/podman/v4/pkg/bindings"
+	"github.com/hanks177/podman/v4/pkg/bindings/containers"
 )
 
 func main() {
@@ -102,8 +102,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/containers/podman/v4/pkg/bindings"
-	"github.com/containers/podman/v4/pkg/bindings/images"
+	"github.com/hanks177/podman/v4/pkg/bindings"
+	"github.com/hanks177/podman/v4/pkg/bindings/images"
 )
 
 func main() {
@@ -130,10 +130,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/containers/podman/v4/pkg/bindings"
-	"github.com/containers/podman/v4/pkg/bindings/containers"
-	"github.com/containers/podman/v4/pkg/bindings/images"
-	"github.com/containers/podman/v4/pkg/specgen"
+	"github.com/hanks177/podman/v4/pkg/bindings"
+	"github.com/hanks177/podman/v4/pkg/bindings/containers"
+	"github.com/hanks177/podman/v4/pkg/bindings/images"
+	"github.com/hanks177/podman/v4/pkg/specgen"
 )
 
 func main() {

@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/containers/podman/v4/pkg/machine"
-	"github.com/containers/podman/v4/pkg/machine/qemu"
-	"github.com/containers/podman/v4/pkg/util"
+	"github.com/hanks177/podman/v4/pkg/machine"
+	"github.com/hanks177/podman/v4/pkg/machine/qemu"
+	"github.com/hanks177/podman/v4/pkg/util"
 	. "github.com/onsi/ginkgo" //nolint:golint,stylecheck
 	. "github.com/onsi/gomega"
 	"github.com/onsi/gomega/gexec"

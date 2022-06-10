@@ -3,7 +3,7 @@ package hooks
 import (
 	"context"
 
-	current "github.com/containers/podman/v4/pkg/hooks/1.0.0"
+	current "github.com/hanks177/podman/v4/pkg/hooks/1.0.0"
 	"github.com/fsnotify/fsnotify"
 	"github.com/sirupsen/logrus"
 )

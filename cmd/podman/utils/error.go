@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	buildahCLI "github.com/containers/buildah/pkg/cli"
-	"github.com/containers/podman/v4/cmd/podman/registry"
+	"github.com/hanks177/podman/v4/cmd/podman/registry"
 )
 
 type OutputErrors []error

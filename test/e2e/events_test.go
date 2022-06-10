@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/containers/podman/v4/libpod/events"
-	. "github.com/containers/podman/v4/test/utils"
+	"github.com/hanks177/podman/v4/libpod/events"
+	. "github.com/hanks177/podman/v4/test/utils"
 	"github.com/containers/storage/pkg/stringid"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

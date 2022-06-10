@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/containers/podman/v4/libpod"
-	"github.com/containers/podman/v4/libpod/define"
-	"github.com/containers/podman/v4/pkg/domain/entities"
-	k8sAPI "github.com/containers/podman/v4/pkg/k8s.io/api/core/v1"
-	"github.com/containers/podman/v4/pkg/systemd/generate"
+	"github.com/hanks177/podman/v4/libpod"
+	"github.com/hanks177/podman/v4/libpod/define"
+	"github.com/hanks177/podman/v4/pkg/domain/entities"
+	k8sAPI "github.com/hanks177/podman/v4/pkg/k8s.io/api/core/v1"
+	"github.com/hanks177/podman/v4/pkg/systemd/generate"
 	"github.com/ghodss/yaml"
 	"github.com/pkg/errors"
 )

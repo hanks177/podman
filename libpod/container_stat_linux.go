@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/containers/buildah/copier"
-	"github.com/containers/podman/v4/libpod/define"
-	"github.com/containers/podman/v4/pkg/copy"
+	"github.com/hanks177/podman/v4/libpod/define"
+	"github.com/hanks177/podman/v4/pkg/copy"
 	"github.com/pkg/errors"
 )
 

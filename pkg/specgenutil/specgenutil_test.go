@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/containers/common/pkg/machine"
-	"github.com/containers/podman/v4/pkg/domain/entities"
-	"github.com/containers/podman/v4/pkg/specgen"
+	"github.com/hanks177/podman/v4/pkg/domain/entities"
+	"github.com/hanks177/podman/v4/pkg/specgen"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -8,11 +8,11 @@ import (
 
 	"github.com/containers/common/libimage"
 	"github.com/containers/common/libnetwork/types"
-	"github.com/containers/podman/v4/utils"
+	"github.com/hanks177/podman/v4/utils"
 
 	"github.com/containers/common/pkg/util"
-	"github.com/containers/podman/v4/pkg/specgen"
-	"github.com/containers/podman/v4/pkg/specgenutil"
+	"github.com/hanks177/podman/v4/pkg/specgen"
+	"github.com/hanks177/podman/v4/pkg/specgenutil"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

@@ -1,7 +1,7 @@
 package specgen
 
 import (
-	"github.com/containers/podman/v4/pkg/util"
+	"github.com/hanks177/podman/v4/pkg/util"
 	"github.com/pkg/errors"
 )
 

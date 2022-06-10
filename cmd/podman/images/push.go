@@ -6,10 +6,10 @@ import (
 	"github.com/containers/common/pkg/auth"
 	"github.com/containers/common/pkg/completion"
 	"github.com/containers/image/v5/types"
-	"github.com/containers/podman/v4/cmd/podman/common"
-	"github.com/containers/podman/v4/cmd/podman/registry"
-	"github.com/containers/podman/v4/pkg/domain/entities"
-	"github.com/containers/podman/v4/pkg/util"
+	"github.com/hanks177/podman/v4/cmd/podman/common"
+	"github.com/hanks177/podman/v4/cmd/podman/registry"
+	"github.com/hanks177/podman/v4/pkg/domain/entities"
+	"github.com/hanks177/podman/v4/pkg/util"
 	"github.com/spf13/cobra"
 )
 

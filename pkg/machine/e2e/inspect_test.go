@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/containers/podman/v4/pkg/machine"
-	"github.com/containers/podman/v4/pkg/machine/qemu"
+	"github.com/hanks177/podman/v4/pkg/machine"
+	"github.com/hanks177/podman/v4/pkg/machine/qemu"
 	jsoniter "github.com/json-iterator/go"
 
 	. "github.com/onsi/ginkgo"
