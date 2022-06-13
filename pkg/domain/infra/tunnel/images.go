@@ -2,7 +2,6 @@ package tunnel
 
 import (
 	"context"
-	"io"
 	"io/ioutil"
 	"os"
 	"strconv"
@@ -129,8 +128,8 @@ type pullResult struct {
 	err    error
 }
 
-func (ir *ImageEngine) PullImage(ctx context.Context, rawImage string, pullOptions *libimage.PullOptions) (io.ReadCloser, error) {
-	return nil, errors.New("not support yet")
+func (ir *ImageEngine) PullImage(ctx context.Context, rawImage string, pullOptions *libimage.PullOptions)  error {
+	return errors.New("not support yet")
 }
 
 func (ir *ImageEngine) Transfer(ctx context.Context, source entities.ImageScpOptions, dest entities.ImageScpOptions, parentFlags []string) error {

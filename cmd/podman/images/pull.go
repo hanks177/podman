@@ -1,7 +1,7 @@
 package images
 
 import (
-	"fmt"
+	"github.com/containers/common/libimage"
 	"os"
 	"strings"
 
@@ -12,7 +12,6 @@ import (
 	"github.com/hanks177/podman/v4/cmd/podman/registry"
 	"github.com/hanks177/podman/v4/cmd/podman/utils"
 	"github.com/hanks177/podman/v4/pkg/domain/entities"
-	"github.com/hanks177/podman/v4/pkg/util"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
@@ -147,25 +146,31 @@ func imagePull(cmd *cobra.Command, args []string) error {
 		}
 	}
 
+	options := &libimage.PullOptions{AllTags: pullOptions.AllTags}
+	options.AuthFilePath = pullOptions.Authfile
+	options.CertDirPath = pullOptions.CertDir
+	options.Architecture = pullOptions.Arch
+	options.OS = pullOptions.OS
+	options.Variant = pullOptions.Variant
+	options.SignaturePolicyPath = pullOptions.SignaturePolicy
+	options.InsecureSkipTLSVerify = pullOptions.SkipTLSVerify
+
 	if pullOptions.CredentialsCLI != "" {
-		creds, err := util.ParseRegistryCreds(pullOptions.CredentialsCLI)
-		if err != nil {
-			return err
+		up := strings.Split(pullOptions.CredentialsCLI, ":")
+		if len(up) != 3 {
+			return errors.New("Parameter invalid: " + pullOptions.CredentialsCLI)
 		}
-		pullOptions.Username = creds.Username
-		pullOptions.Password = creds.Password
+		options.Username, options.Password, options.IdentityToken = up[0], up[1], up[2]
 	}
+
 	// Let's do all the remaining Yoga in the API to prevent us from
 	// scattering logic across (too) many parts of the code.
 	var errs utils.OutputErrors
 	for _, arg := range args {
-		pullReport, err := registry.ImageEngine().Pull(registry.GetContext(), arg, pullOptions.ImagePullOptions)
+		err = registry.ImageEngine().PullImage(registry.GetContext(), arg, options)
 		if err != nil {
 			errs = append(errs, err)
 			continue
-		}
-		for _, img := range pullReport.Images {
-			fmt.Println(img)
 		}
 	}
 	return errs.PrintErrors()
